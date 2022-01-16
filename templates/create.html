@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <title>BobMemoria</title>
+  </head>
+  <body>
+  
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+	  <div class="container-fluid">
+		<a class="navbar-brand" href="/">		<!-- se lo clicco mi porta alla homepage -->
+		  <img src="https://cdn-icons-png.flaticon.com/512/3388/3388607.png" alt="." width="30" height="30" class="d-inline-block align-text-top">
+		  BobMemoria
+		</a>
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav">
+				<li class="nav-item">
+				  <a class="nav-link" href="/create">Bobbalo qui</a> 	<!-- se lo clicco mi porta .../create -->
+				</li>
+			</ul>
+		</div>
+	  </div>
+	</nav>
+	
+	<form method="post" class="m-5">
+		<div class="form-group">
+		  <label for="titolo">Titolo</label>
+		  <input type="text" name="titolo" class="form-control" placeholder="Bobba un titolo" 
+		  value="{{ request.form['titolo'] }}" required></input>	<!-- required rende necessario il valore, che viene salvato nel dizionario form, alla chiave 'titolo', all'interno dell'oggetto request (che rappresenta la richiesta http di tipo post) -->
+		</div>
+		<div class="form-group">
+		  <label for="info">Info</label>
+		  <textarea name="info"class="form-control" placeholder = "Bobba delle informazioni">{{ request.form['info'] }}</textarea>		<!-- l'ggetto request viene spedito alla funzione create che si occupa delle richieste post a /create-->
+		</div>
+		</br>
+		<div class="form-group">
+			<button type="submit" class="btn btn-primary">Bobba Post</button>
+		</div>
+	</form>
+	
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+  </body>
+</html>
